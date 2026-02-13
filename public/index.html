@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Empyrean Enclave Entertainment</title>
+  <meta name="description" content="Empyrean Enclave — professional audio engineering and videography services. Book studio sessions, mixing, mastering and cinematic video production." />
+  <meta name="theme-color" content="#071226">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <video id="bgVideo" class="bg-video" autoplay muted loop playsinline aria-hidden="true"></video>
+  <header class="site-header">
+    <nav class="topnav container">
+      <div class="brand">Empyrean Enclave</div>
+      <div class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#booking">Book</a>
+        <a href="#bookingsList">Schedule</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <div class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left reveal">
+          <h1 class="logo">Empyrean Enclave Entertainment</h1>
+          <p class="hero-sub">Audio Engineering & Videography — Crafting sounds that move and visuals that breathe.</p>
+          <div class="hero-actions">
+            <a class="btn glow" href="#booking">Book Now</a>
+            <a class="btn" href="#bookingsList">View Schedule</a>
+          </div>
+          <div id="modeBadge" style="margin-top:12px;font-size:13px;color:var(--muted)"></div>
+          <div style="margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <label class="file" style="font-size:13px">Background Video<input id="bgVideoInput" type="file" accept="video/*"></label>
+            <button id="clearBgVideo" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 10px">Clear Background</button>
+          </div>
+          <div class="audio-panel" id="audioPanel">
+            <canvas id="waveform" width="600" height="90" aria-hidden="true"></canvas>
+            <div class="audio-controls">
+              <label class="file">Load audio<input id="fileInput" type="file" accept="audio/*"></label>
+              <button id="playDemo" class="btn">Play Demo Tone</button>
+              <button id="togglePlay" class="btn">Play</button>
+              <button id="restartAudio" class="btn">Restart</button>
+              <a id="downloadAudio" class="btn" style="display:none" aria-hidden="true">Download</a>
+              <label class="vol">Vol<input id="vol" type="range" min="0" max="1" step="0.01" value="0.8"></label>
+            </div>
+            <div id="audioMsg" class="muted">FREE - Beat Of The Month: *display project name*</div>
+            </div>
+
+          <section class="multitrack">
+            <h2>Multi-Track Player</h2>
+            <div class="multitrack-controls">
+              <label class="file">Add Tracks<input id="multiFileInput" type="file" accept="audio/*" multiple></label>
+            </div>
+            <div id="tracksContainer" class="tracks-container"></div>
+          </section>
+
+        </div>
+        <div class="hero-right reveal">
+          <div class="vinyl interactive" title="Empyrean Enclave">
+            <div class="vinyl-center"></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="services">
+      <div class="card">
+        <h2>Audio Engineering</h2>
+        <p>Recording, mixing, mastering, studio sessions.</p>
+      </div>
+      <div class="card">
+        <h2>Videography</h2>
+        <p>Music videos, live event capture, editing.</p>
+      </div>
+    </section>
+
+    <section class="booking">
+      <h2>Book a Service</h2>
+      <form id="bookingForm">
+        <div class="row">
+          <label>Name<input type="text" id="name" required></label>
+          <label>Service
+            <select id="service">
+              <option value="Audio Engineering">Audio Engineering</option>
+              <option value="Videography">Videography</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label>Date<input type="date" id="date" required></label>
+          <label>Time<input type="time" id="time" required></label>
+          <label>Duration (Hours)<input type="number" id="duration" value="60" min="15" required></label>
+        </div>
+        <label>Notes<textarea id="notes" rows="3"></textarea></label>
+        <div class="actions">
+          <button type="submit">Request Booking</button>
+        </div>
+        <div id="formMsg" class="muted"></div>
+      </form>
+    </section>
+
+    <section class="schedule">
+      <h2>Upcoming Bookings</h2>
+      <div id="bookingsList"></div>
+    </section>
+
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Empyrean Enclave Entertainment</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

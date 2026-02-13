@@ -1,0 +1,17 @@
+node_modules/
+web/node_modules/
+/.env
+.env.local
+.env.*.local
+.DS_Store
+dist/
+build/
+.vscode/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+coverage/
+/.cache
+.idea/
+Thumbs.db
+*.log

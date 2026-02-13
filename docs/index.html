@@ -6,7 +6,7 @@
   <title>Empyrean Enclave Entertainment</title>
   <meta name="description" content="Empyrean Enclave — professional audio engineering and videography services. Book studio sessions, mixing, mastering and cinematic video production." />
   <meta name="theme-color" content="#071226">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -49,23 +49,14 @@
               <label class="vol">Vol<input id="vol" type="range" min="0" max="1" step="0.01" value="0.8"></label>
             </div>
             <div id="audioMsg" class="muted">FREE - Beat Of The Month: *display project name*</div>
-            </div>
+          </div>
 
           <section class="multitrack">
             <h2>Multi-Track Player</h2>
             <div class="multitrack-controls">
-              <!-- Track upload removed; using packaged MP3 players below -->
+              <label class="file">Add Tracks<input id="multiFileInput" type="file" accept="audio/*" multiple></label>
             </div>
-            <div id="tracksContainer" class="tracks-container">
-              <div class="track-item">
-                <div class="track-meta"><strong>Achievements test3.mp3</strong><div class="muted">Local file</div></div>
-                <div class="track-controls"><audio controls style="width:100%" src="/audio/achievements-test3.mp3"></audio></div>
-              </div>
-              <div class="track-item">
-                <div class="track-meta"><strong>Up Too Late.mp3</strong><div class="muted">Local file</div></div>
-                <div class="track-controls"><audio controls style="width:100%" src="/audio/up-too-late.mp3"></audio></div>
-              </div>
-            </div>
+            <div id="tracksContainer" class="tracks-container"></div>
           </section>
 
         </div>
@@ -75,7 +66,6 @@
           </div>
         </div>
       </div>
-      
     </div>
   </header>
 
@@ -106,7 +96,7 @@
         <div class="row">
           <label>Date<input type="date" id="date" required></label>
           <label>Time<input type="time" id="time" required></label>
-          <label>Duration (Hours)<input type="number" id="duration" value="60" min="15" required></label>
+          <label>Duration (minutes)<input type="number" id="duration" value="60" min="15" required></label>
         </div>
         <label>Notes<textarea id="notes" rows="3"></textarea></label>
         <div class="actions">
@@ -121,7 +111,6 @@
       <div id="bookingsList"></div>
     </section>
 
-    
   </main>
 
   <footer class="site-footer">

@@ -11,6 +11,14 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Serve two MP3 files placed at project root via explicit routes
+app.get('/audio/achievements-test3.mp3', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Achievements test3.mp3'));
+});
+
+app.get('/audio/up-too-late.mp3', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Up Too Late.mp3'));
+});
 function toTimestamp(dateStr, timeStr) {
   return new Date(`${dateStr}T${timeStr}`).getTime();
 }
